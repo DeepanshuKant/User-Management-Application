@@ -1,0 +1,12 @@
+nav {
+    text-align: center;
+    padding: 8px 24px;
+}
+
+nav>h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
