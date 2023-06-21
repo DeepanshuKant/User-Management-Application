@@ -13,7 +13,7 @@ const User = () => {
     const [email, setEmail] = useState('');
     const [contact, setContact] = useState('');
 
-    //User Update State
+    //This state is used when, user wants to update the user details and we need existing users detail
     const [updatedName, setUpdatedName] = useState('');
     const [updatedEmail, setUpdatedEmail] = useState('');
     const [updatedContact, setUpdatedContact] = useState('');
@@ -70,15 +70,17 @@ const User = () => {
         setEmail(userDetail.email);
         setContact(userDetail.contact);
 
-        //set the updated user details
+        //set the state for existing user details so that we an use the existing users email to iterate users state s a unique key.
         setUpdatedName(userDetail.name);
         setUpdatedEmail(userDetail.email);
         setUpdatedContact(userDetail.contact);
 
     }
 
+    //This function is used to update the user details
     const userUpdateHandler = (e) => {
         e.preventDefault();
+
         const userNewDetail = {
             name: name,
             email: email,
@@ -143,7 +145,7 @@ const User = () => {
                 </div>
 
                 <div className="users__container">
-                    {users ? users.map((user, index) => (
+                    {users.length != 0 && users ? users.map((user, index) => (
                         <div className="user__box" key={index} >
                             <div className="user_function">
                                 <span onClick={() => userUpdate(user)} ><AiFillEdit /></span>
@@ -155,7 +157,7 @@ const User = () => {
                                 <p className='user_detail' >{user.contact}</p>
                             </div>
                         </div>
-                    )) : <h1>Add some Users!!!</h1>}
+                    )) : <h1>No Users</h1>}
                 </div>
             </div >
 
