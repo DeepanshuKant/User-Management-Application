@@ -143,7 +143,7 @@ const User = () => {
                 </div>
 
                 <div className="users__container">
-                    {users && users.map((user, index) => (
+                    {users ? users.map((user, index) => (
                         <div className="user__box" key={index} >
                             <div className="user_function">
                                 <span onClick={() => userUpdate(user)} ><AiFillEdit /></span>
@@ -155,7 +155,7 @@ const User = () => {
                                 <p className='user_detail' >{user.contact}</p>
                             </div>
                         </div>
-                    ))}
+                    )) : <h1>Add some Users!!!</h1>}
                 </div>
             </div >
 

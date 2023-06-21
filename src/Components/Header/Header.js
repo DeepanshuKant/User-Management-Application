@@ -5,7 +5,7 @@ const Header = () => {
         <>
             <header>
                 <nav>
-                    <h1>
+                    <h1  >
                         User Management
                     </h1>
                 </nav>
